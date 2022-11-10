@@ -5,222 +5,222 @@
   <h2><u>Personal Information</u></h2>
   </div>
 <div style="display: flex;">
-  <div style=" width: 60%; padding-top: 4%;">    
-      <div style="margin-left: 10%; margin-right: 10%; margin-bottom: 10%; padding-left: 5%; " >  
+  <div style=" width: 60%; padding-top: 4%;">
+      <div style="margin-left: 10%; margin-right: 10%; margin-bottom: 10%; padding-left: 5%; " >
         <form class="example-form" action="#" method="post">
             <mat-form-field class="example-full-width" [ngClass]="{}" [ngClass]="{}" appearance="fill">
                 <mat-label>Form ID</mat-label>
-                <input matInput name="id" [(ngModel)] = "page1.id" type="text" required> 
-            </mat-form-field> 
-            <p *ngIf="page1.id.length == 0" style="color: red;"> Size should be greater than 0.</p>  
-            <p *ngIf="notNumber()" style="color: red"> Please Input only Numbers.</p>  
-    
+                <input matInput name="id" [(ngModel)] = "page1.id" type="text" required>
+            </mat-form-field>
+            <p *ngIf="page1.id.length == 0" style="color: red;"> Size should be greater than 0.</p>
+            <p *ngIf="notNumber()" style="color: red"> Please Input only Numbers.</p>
+
             <h3 style="text-align: center;"> Your Name </h3>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Prefix</mat-label>
                 <input matInput name="prefix" [(ngModel)] = "page1.personName.prefix" required>
-            </mat-form-field>  
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>First Name</mat-label>
                 <input matInput name="firstName" [(ngModel)] = "page1.personName.firstName" required>
-            </mat-form-field>        
-            &nbsp; 
-             
+            </mat-form-field>
+            &nbsp;
+
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Last Name</mat-label>
                 <input matInput name="lastName" [(ngModel)] = "page1.personName.lastName" required>
-            </mat-form-field>   
-    
-            &nbsp;     
+            </mat-form-field>
+
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Suffix</mat-label>
                 <input matInput name="suffix" [(ngModel)] = "page1.personName.suffix" required>
-            </mat-form-field>  
-            &nbsp;     
+            </mat-form-field>
+            &nbsp;
             <h3 style="text-align: center;"> Fathers Information </h3>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Full Name</mat-label>
                 <input matInput name="fatherFullName" [(ngModel)]="page1.fatherInfo.fullName" required>
-            </mat-form-field>        
-            &nbsp; 
-              
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
+
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Occupation</mat-label>
-                <mat-select name="occupation" [(ngModel)]="page1.fatherInfo.occupation"> 
+                <mat-select name="occupation" [(ngModel)]="page1.fatherInfo.occupation">
                         <mat-option [value]="occupationData.occupation" *ngFor="let occupationData of personOccupation">
                             {{occupationData.occupation}}
-                        </mat-option> 
-                  </mat-select>        
-            </mat-form-field>       
+                        </mat-option>
+                  </mat-select>
+            </mat-form-field>
             <h3 style="text-align: center;"> Mothers Information</h3>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Full Name</mat-label>
                 <input matInput name="motherFullName" [(ngModel)]="page1.motherInfo.fullName">
-            </mat-form-field>        
-            &nbsp; 
-              
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
+
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Occupation</mat-label>
-                <mat-select name="occupation" [(ngModel)]="page1.motherInfo.occupation"> 
+                <mat-select name="occupation" [(ngModel)]="page1.motherInfo.occupation">
                         <mat-option [value]="occupationData.occupation" *ngFor="let occupationData of personOccupation">
                             {{occupationData.occupation}}
-                        </mat-option> 
-                  </mat-select>        
-            </mat-form-field>       
+                        </mat-option>
+                  </mat-select>
+            </mat-form-field>
             <h3 style="text-align: center;"> Present Address </h3>
                     <!-- Select Country -->
-                    <mat-form-field class="example-full-width" appearance="fill"> 
-                        <mat-select name="presentCountry" [(ngModel)]="page1.presentAddress.selectedOption"> 
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-select name="presentCountry" [(ngModel)]="page1.presentAddress.selectedOption">
                                 <mat-option value="bangladesh" selected>
                                     Bangladesh
-                                </mat-option> 
+                                </mat-option>
                                 <mat-option value="other">
                                     Other
-                                </mat-option> 
-                          </mat-select>        
-                    </mat-form-field>      
+                                </mat-option>
+                          </mat-select>
+                    </mat-form-field>
                     <!-- Show BD Country if Selected == BD -->
-                    <div *ngIf="page1.presentAddress.selectedOption === 'bangladesh'"> 
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Division</mat-label> 
-                            <mat-select name="division" [(ngModel)]="page1.presentAddress.bangladesh.division" (selectionChange)="setSelectedDivisionToDistrict()"> 
+                    <div *ngIf="page1.presentAddress.selectedOption === 'bangladesh'">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Division</mat-label>
+                            <mat-select name="division" [(ngModel)]="page1.presentAddress.bangladesh.division" (selectionChange)="setSelectedDivisionToDistrict()">
                                     <mat-option [value]="division.divisionName" *ngFor="let division of bdAddressData">
                                         {{division.divisionName}}
-                                    </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select District</mat-label> 
-                            <mat-select name="district" [(ngModel)]="page1.presentAddress.bangladesh.district" (selectionChange)="setSelectedDistrictToUpazilla()"> 
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select District</mat-label>
+                            <mat-select name="district" [(ngModel)]="page1.presentAddress.bangladesh.district" (selectionChange)="setSelectedDistrictToUpazilla()">
                                     <mat-option [value]="district.name" *ngFor="let district of presentAddrDivisionToDistrictData">
                                         {{district.name}}
-                                    </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Upazilla</mat-label> 
-                            <mat-select name="upazilla" [(ngModel)]="page1.presentAddress.bangladesh.upazilla" (selectionChange)="setUpazillaToPoliceStationData()"> 
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Upazilla</mat-label>
+                            <mat-select name="upazilla" [(ngModel)]="page1.presentAddress.bangladesh.upazilla" (selectionChange)="setUpazillaToPoliceStationData()">
                                     <mat-option [value]="upazilla.name" *ngFor="let upazilla of presentAddrDistrictToUpazillaData">
                                         {{upazilla.name}}
-                                    </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Police Station</mat-label> 
-                            <mat-select name="policeStation" [(ngModel)]="page1.presentAddress.bangladesh.policeStation" (selectionChange)="setPoliceStationToPostOffice()"> 
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Police Station</mat-label>
+                            <mat-select name="policeStation" [(ngModel)]="page1.presentAddress.bangladesh.policeStation" (selectionChange)="setPoliceStationToPostOffice()">
                                     <mat-option [value]="policeStation.name" *ngFor="let policeStation of presentAddrUpazillaToPoliceStationData">
                                         {{policeStation.name}}
-                                    </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Post Office</mat-label> 
-                            <mat-select name="postOffice" [(ngModel)]="page1.presentAddress.bangladesh.postOffice" (selectionChange)="setPostOfficeToVillage()"> 
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Post Office</mat-label>
+                            <mat-select name="postOffice" [(ngModel)]="page1.presentAddress.bangladesh.postOffice" (selectionChange)="setPostOfficeToVillage()">
                                     <mat-option [value]="postOffice.name" *ngFor="let postOffice of presentAddrPoliceStationToPostOffice">
                                         {{postOffice.name}}
-                                    </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Post Code</mat-label> 
-                            <mat-select name="postCode" [(ngModel)]="page1.presentAddress.bangladesh.postCode"> 
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Post Code</mat-label>
+                            <mat-select name="postCode" [(ngModel)]="page1.presentAddress.bangladesh.postCode">
                                 <mat-option [value]="postOffice.postCode" *ngFor="let postOffice of presentAddrPoliceStationToPostOffice">
                                     {{postOffice.postCode}}
-                                </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
-                        &nbsp;  
-                        <mat-form-field class="example-full-width" appearance="fill">  
-                            <mat-label>Select Village</mat-label> 
-                            <mat-select name="village" [(ngModel)]="page1.presentAddress.bangladesh.village"> 
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Village</mat-label>
+                            <mat-select name="village" [(ngModel)]="page1.presentAddress.bangladesh.village">
                                 <mat-option [value]="village.name" *ngFor="let village of presentAddrPostOfficeToVillage">
                                     {{village.name}}
-                                </mat-option>  
-                            </mat-select>        
-                        </mat-form-field>  
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
             <!-- Show BD Country if Selected == Other -->
             <div *ngIf="page1.presentAddress.selectedOption === 'other'">
-                <mat-form-field class="example-full-width" appearance="fill">  
-                    <mat-label>Select Country</mat-label> 
-                    <mat-select name="country" [(ngModel)]="page1.presentAddress.other.country"> 
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Select Country</mat-label>
+                    <mat-select name="country" [(ngModel)]="page1.presentAddress.other.country">
                         <mat-option [value]="value" *ngFor="let value of countries">
                             {{value}}
-                        </mat-option>  
-                    </mat-select>        
-                </mat-form-field>  
-                &nbsp; 
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>City</mat-label>
                     <input matInput name="city" [(ngModel)]="page1.presentAddress.other.city">
-                </mat-form-field>      
-                &nbsp; 
+                </mat-form-field>
+                &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>State</mat-label>
                     <input matInput name="state" [(ngModel)]="page1.presentAddress.other.state">
-                </mat-form-field>    
-                &nbsp;  
+                </mat-form-field>
+                &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Postal Code</mat-label>
                     <input matInput name="postalCode" [(ngModel)]="page1.presentAddress.other.postalCode">
-                </mat-form-field> 
+                </mat-form-field>
             </div>
-            <h3 style="text-align: center;"> Parmanent Address </h3> 
+            <h3 style="text-align: center;"> Parmanent Address </h3>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Village</mat-label>
                 <input matInput name="village" [(ngModel)]="page1.parmanentAddress.village">
-            </mat-form-field>        
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Upazilla</mat-label>
                 <input matInput name="upazilla" [(ngModel)]="page1.parmanentAddress.upazilla">
-            </mat-form-field>     
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Police Station</mat-label>
                 <input matInput name="policeStation" [(ngModel)]="page1.parmanentAddress.policeStation">
-            </mat-form-field>    
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Post Code</mat-label>
                 <input matInput name="postCode" [(ngModel)]="page1.parmanentAddress.postCode">
-            </mat-form-field>     
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Post Office</mat-label>
                 <input matInput name="postOffice" [(ngModel)]="page1.parmanentAddress.postOffice">
-            </mat-form-field>     
-            &nbsp; 
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>District</mat-label>
                 <input matInput name="district" [(ngModel)]="page1.parmanentAddress.district">
-            </mat-form-field>         
-            <h3 style="text-align: center;"> Other Information </h3> 
+            </mat-form-field>
+            <h3 style="text-align: center;"> Other Information </h3>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Mobile No.</mat-label>
                 <input matInput name="mobileNo" [(ngModel)]="page1.mobileNo">
-            </mat-form-field>        
-            &nbsp;    
+            </mat-form-field>
+            &nbsp;
             <div>
-            <mat-form-field [style.width.px]=132 appearance="fill">  
-                <mat-label>Country Code</mat-label> 
-                <mat-select name="country" [(ngModel)]="selectedPhoneCode"> 
+            <mat-form-field [style.width.px]=132 appearance="fill">
+                <mat-label>Country Code</mat-label>
+                <mat-select name="country" [(ngModel)]="selectedPhoneCode">
                     <!-- <mat-option [value]="{code:'+880', country:'Bangladesh'}" [selected]="true">
                         +880
                     </mat-option> -->
                     <mat-option [value]="valueX" *ngFor="let valueX of countryCallCode;">
                         {{valueX.code}}
-                    </mat-option>  
-                </mat-select>        
-            </mat-form-field>  
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
             <mat-form-field class="example-chip-list" appearance="fill">
                 <mat-label>Phone Numbers</mat-label>
                 <mat-chip-list #chipList1 aria-label="phone selection">
@@ -238,7 +238,7 @@
                 </mat-chip-list>
               </mat-form-field>
             </div>
-              &nbsp; 
+              &nbsp;
             <mat-form-field class="example-chip-list" appearance="fill" [style.width.px]=220>
                 <mat-label>Email Address</mat-label>
                 <mat-chip-list #chipList aria-label="email selection">
@@ -259,7 +259,7 @@
                 <mat-label>Email Address</mat-label>
                 <input matInput name="emailAddr" [(ngModel)]="page1.emailAddr">
             </mat-form-field>     -->
-            &nbsp; 
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Gender</mat-label>
                 <mat-select name="gender" [(ngModel)]="page1.gender">
@@ -272,9 +272,9 @@
                     <mat-option value="other">
                       Other
                     </mat-option>
-                  </mat-select>        
-            </mat-form-field>     
-            &nbsp; 
+                  </mat-select>
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Religion</mat-label>
                 <mat-select name="religion" [(ngModel)]="page1.religion">
@@ -287,11 +287,11 @@
                   <mat-option value="other">
                     other
                   </mat-option>
-                </mat-select>         
-            </mat-form-field>     
-            &nbsp; 
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
             <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Nationality</mat-label> 
+                <mat-label>Nationality</mat-label>
                 <mat-select name="nationality" [(ngModel)]="page1.nationality">
                   <mat-option value="Bangladeshi">
                     Bangladeshi
@@ -302,17 +302,17 @@
                   <mat-option value="other">
                     Other
                   </mat-option>
-                </mat-select>        
-              </mat-form-field>   
+                </mat-select>
+              </mat-form-field>
               <div style="display: flex; align-items: center; justify-content: center;">
-                <button mat-raised-button color="primary" type="submit" matStepperNext>Next</button>        
+                <button mat-raised-button color="accent" type="submit" matStepperNext>Next</button>
               </div>
         </form>
         <!-- <div style="display: flex; padding-top: 2%; padding-bottom: 3%; align-items: center; justify-content: center;">
-            <button mat-raised-button color="warn">Form 1</button>  
-            <button mat-raised-button color color="warn" style="margin-left: 2%;">Form 2</button>        
+            <button mat-raised-button color="warn">Form 1</button>
+            <button mat-raised-button color color="warn" style="margin-left: 2%;">Form 2</button>
         </div>  -->
-      </div> 
+      </div>
   </div>
   <div style="width: 30%; margin-top: 13%; margin-bottom: 20%; padding-left: 2%; background: #e8e6fd4d;">
     <pre><p>{{page1 | json}}</p></pre>

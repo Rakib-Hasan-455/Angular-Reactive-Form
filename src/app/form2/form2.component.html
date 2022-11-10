@@ -1,3 +1,8 @@
+<div class="head-container">
+  <h1> Southeast University </h1>
+  <p>  Permanent Campus 251/A and 252. Tejgaon Industrial Area Dhaka-1208   </p>
+  <hr width="90%">
+</div>
 <div style="display: flex;">
     <div style=" width: 60%; padding-top: 4%; padding-left: 2%;">
         <mat-form-field class="example-full-width" appearance="fill">
@@ -8,10 +13,12 @@
                     </mat-option>
               </mat-select>
         </mat-form-field>
+      &nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Medical Disability(If Any)</mat-label>
             <input matInput name="suffix" required>
         </mat-form-field>
+      &nbsp;
         <mat-form-field appearance="fill">
             <mat-label>Date Of Birth</mat-label>
             <input matInput [matDatepicker]="picker">
@@ -19,8 +26,8 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-
-            <h3 style="text-align: center;"> Present Address </h3>
+      &nbsp;
+            <h3 style="text-align: center;"> <br>Place Of Birth </h3>
                     <!-- Select Country -->
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-select name="presentCountry">
@@ -105,5 +112,43 @@
                     <input matInput name="postalCode">
                 </mat-form-field>
             </div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>NID No.</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Passport No.</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Martial Status</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      <h3 style="text-align: center;"> <br>Emergency Persons Details </h3>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Mobile No.</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Relationship</mat-label>
+        <input matInput name="postalCode">
+      </mat-form-field>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <button mat-raised-button color="accent" matStepperPrevious>Previous</button>
+        <button mat-raised-button color="primary" type="submit" style="margin-left: 6%" matStepperNext>Submit</button>
+      </div>
     </div>
 </div>

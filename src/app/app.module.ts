@@ -16,12 +16,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { Form2Component } from './form2/form2.component'; 
 import {MatStepperModule} from '@angular/material/stepper'; 
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
-import {MatNativeDateModule} from '@angular/material/core'
+import {MatNativeDateModule} from '@angular/material/core';
+import { FormSubmitMsgComponent } from './form-submit-msg/form-submit-msg.component'
 @NgModule({
   declarations: [
     AppComponent,
     Form1Component,
-    Form2Component
+    Form2Component,
+    FormSubmitMsgComponent
   ],
   imports: [
     BrowserModule,

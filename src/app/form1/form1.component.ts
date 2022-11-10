@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import {FormdataserviceService} from "../service/formdataservice.service";
 
 @Component({
   selector: 'app-form1',
@@ -17,7 +18,7 @@ export class Form1Component {
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
 
   addPhoneNumber(event: MatChipInputEvent): void {
-    var value = (event.value || '').trim();  
+    var value = (event.value || '').trim();
     // Add our phone
     if (value) {
       this.phoneNumbers.push({number: this.selectedPhoneCode.code+value, countryPhoneCode: this.selectedPhoneCode});
@@ -36,7 +37,7 @@ export class Form1Component {
   }
 
   addEmail(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim(); 
+    const value = (event.value || '').trim();
     // Add our email
     if (value) {
       this.emailAddresses.push({emailAddress: value});
@@ -54,66 +55,11 @@ export class Form1Component {
     }
   }
 
-  page1:any = {
-    id: "",
-    personName: {
-      prefix: "",
-      firstName: "",
-      lastName: "",
-      suffix: ""
-    },
-    fatherInfo: {
-      fullName: "",
-      occupation: ""
-    },
-    motherInfo: {
-      fullName: "",
-      occupation: ""
-    },
-    presentAddress: {
-      selectedOption: "bangladesh",
-      bangladesh: {
-        division: "",
-        district: "",
-        upazilla: "",
-        policeStation: "",
-        postOffice: "", 
-        postCode: "",
-        village: ""  
-      },
-      other: {
-        country: "",
-        city: "",
-        state: "",
-        postalCode: ""
-      }
-    },
-    parmanentAddress: {
-      bangladesh: {
-        division: "",
-        district: "",
-        upazilla: "",
-        policeStation: "",
-        postOffice: "", 
-        postCode: "",
-        village: ""  
-      },
-      other: {
-        country: "",
-        city: "",
-        state: "",
-        postalCode: ""
-      }
-    },
-    mobileNo: "",
-    phoneNo: this.phoneNumbers,
-    emailAddr: this.emailAddresses,
-    gender: "",
-    religion: "",
-    nationality: ""
-  }
+  page1:any;
 // give phoneNo: any = arrayList of code, countryName
-  constructor() { }
+  constructor(formDataService: FormdataserviceService) {
+    this.page1 = formDataService.allPageData;
+  }
 
   personOccupation = [
     {id:0, occupation: "Govt. Service Holder"},
@@ -133,7 +79,7 @@ export class Form1Component {
     { code: "+16", name: "England" },
     { code: "+880", name: "Bangladesh" }
   ];
- 
+
   presentAddrDivisionToDistrictData: any;
   setSelectedDivisionToDistrict() {
     for(let division of this.bdAddressData) {
@@ -180,7 +126,7 @@ export class Form1Component {
     }
   }
 
-  
+
 
   bdAddressData = [
     {
@@ -203,7 +149,7 @@ export class Form1Component {
                       },
                       {
                         name: "village y"
-                      }, 
+                      },
                       {
                         name: "village z"
                       }
@@ -217,7 +163,7 @@ export class Form1Component {
                       },
                       {
                         name: "village yy"
-                      }, 
+                      },
                       {
                         name: "village zz"
                       }
@@ -241,7 +187,7 @@ export class Form1Component {
                       },
                       {
                         name: "village y"
-                      }, 
+                      },
                       {
                         name: "village z"
                       }
@@ -255,7 +201,7 @@ export class Form1Component {
                       },
                       {
                         name: "village yy"
-                      }, 
+                      },
                       {
                         name: "village zz"
                       }
@@ -274,7 +220,7 @@ export class Form1Component {
                       },
                       {
                         name: "Banani village y"
-                      }, 
+                      },
                       {
                         name: "Banani village z"
                       }
@@ -288,7 +234,7 @@ export class Form1Component {
                       },
                       {
                         name: "Banani village yy"
-                      }, 
+                      },
                       {
                         name: "Banani village zz"
                       }
@@ -317,7 +263,7 @@ export class Form1Component {
                       },
                       {
                         name: "village dfy"
-                      }, 
+                      },
                       {
                         name: "village sdfz"
                       }
@@ -331,7 +277,7 @@ export class Form1Component {
                       },
                       {
                         name: "village ydfy"
-                      }, 
+                      },
                       {
                         name: "village dfzz"
                       }
@@ -355,7 +301,7 @@ export class Form1Component {
                       },
                       {
                         name: "village dfy"
-                      }, 
+                      },
                       {
                         name: "village zdsf"
                       }
@@ -369,7 +315,7 @@ export class Form1Component {
                       },
                       {
                         name: "village ydsfy"
-                      }, 
+                      },
                       {
                         name: "village zdz"
                       }
@@ -388,7 +334,7 @@ export class Form1Component {
                       },
                       {
                         name: "khilkhet village ydf"
-                      }, 
+                      },
                       {
                         name: "khilkhet village zdsf"
                       }
@@ -402,7 +348,7 @@ export class Form1Component {
                       },
                       {
                         name: "khilkhet village ysdfy"
-                      }, 
+                      },
                       {
                         name: "khilkhet village zdfz"
                       }
@@ -414,12 +360,12 @@ export class Form1Component {
             }
           ]
         }
-      ] 
+      ]
      }
   ]
 
   notNumber(): boolean {
-    
+
     return isNaN(Number(this.page1.id));
   }
 
