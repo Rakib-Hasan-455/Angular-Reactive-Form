@@ -1,0 +1,109 @@
+<div style="display: flex;">
+    <div style=" width: 60%; padding-top: 4%; padding-left: 2%;">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Blood Group</mat-label>
+            <mat-select>
+                    <mat-option value="item"  *ngFor="let item of bloodGroups">
+                        {{item}}
+                    </mat-option>
+              </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Medical Disability(If Any)</mat-label>
+            <input matInput name="suffix" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+            <h3 style="text-align: center;"> Present Address </h3>
+                    <!-- Select Country -->
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-select name="presentCountry">
+                                <mat-option value="bangladesh" selected>
+                                    Bangladesh
+                                </mat-option>
+                                <mat-option value="other">
+                                    Other
+                                </mat-option>
+                          </mat-select>
+                    </mat-form-field>
+                    <!-- Show BD Country if Selected == BD -->
+                    <div  >
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Division</mat-label>
+                            <mat-select name="division">
+                                    <mat-option [value]=" " >
+
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select District</mat-label>
+                            <mat-select name="district">
+                                    <mat-option [value]=" ">
+
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Police Station</mat-label>
+                            <mat-select name="policeStation" >
+                                    <mat-option>
+
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Post Office</mat-label>
+                            <mat-select name="postOffice">
+                                    <mat-option>
+
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Select Village</mat-label>
+                            <mat-select name="village">
+                                <mat-option>
+
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+            <!-- Show BD Country if Selected == Other -->
+            <div  >
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Select Country</mat-label>
+                    <mat-select name="country" >
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput name="city">
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>State</mat-label>
+                    <input matInput name="state">
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput name="postalCode">
+                </mat-form-field>
+            </div>
+    </div>
+</div>
