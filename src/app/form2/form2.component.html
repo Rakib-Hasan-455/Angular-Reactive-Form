@@ -5,10 +5,10 @@
 </div>
 <div style="display: flex;">
     <div style=" width: 60%; padding-top: 4%; padding-left: 2%;">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field appearance="fill">
             <mat-label>Blood Group</mat-label>
-            <mat-select>
-                    <mat-option value="item"  *ngFor="let item of bloodGroups">
+            <mat-select [(ngModel)]="page2.bloodGroup">
+                    <mat-option [value]="item"  *ngFor="let item of bloodGroups">
                         {{item}}
                     </mat-option>
               </mat-select>
@@ -16,12 +16,12 @@
       &nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Medical Disability(If Any)</mat-label>
-            <input matInput name="suffix" required>
+            <input  [(ngModel)]="page2.medicalDisability" matInput name="suffix" required>
         </mat-form-field>
       &nbsp;
         <mat-form-field appearance="fill">
             <mat-label>Date Of Birth</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input [(ngModel)]="page2.dateOfBirth" matInput [matDatepicker]="picker">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -30,7 +30,7 @@
             <h3 style="text-align: center;"> <br>Place Of Birth </h3>
                     <!-- Select Country -->
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-select name="presentCountry">
+                        <mat-select name="presentCountry" [(ngModel)]="page2.placeOfBirth.selectedOption">
                                 <mat-option value="bangladesh" selected>
                                     Bangladesh
                                 </mat-option>
@@ -90,65 +90,78 @@
             <div  >
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Select Country</mat-label>
-                    <mat-select name="country" >
-                        <mat-option>
-
-                        </mat-option>
+                    <mat-select name="country" [(ngModel)]="page2.placeOfBirth.other.country">
+                      <mat-option value="Canada" selected>
+                        Canada
+                      </mat-option>
+                      <mat-option value="Australia">
+                        Australia
+                      </mat-option>
                     </mat-select>
                 </mat-form-field>
                 &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>City</mat-label>
-                    <input matInput name="city">
+                    <input matInput name="city" [(ngModel)]="page2.placeOfBirth.other.city">
                 </mat-form-field>
                 &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>State</mat-label>
-                    <input matInput name="state">
+                    <input matInput name="state" [(ngModel)]="page2.placeOfBirth.other.state">
                 </mat-form-field>
                 &nbsp;
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Postal Code</mat-label>
-                    <input matInput name="postalCode">
+                    <input matInput name="postalCode" [(ngModel)]="page2.placeOfBirth.other.postalCode">
                 </mat-form-field>
             </div>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>NID No.</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="nidNo" [(ngModel)]="page2.nidNo">
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Passport No.</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="passportNo" [(ngModel)]="page2.passportNo">
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Martial Status</mat-label>
-        <input matInput name="postalCode">
+        <mat-label>Marital Status</mat-label>
+        <mat-select name="maritalStatus" [(ngModel)]="page2.maritalStatus">
+          <mat-option value="Married" selected>
+            Married
+          </mat-option>
+          <mat-option value="Unmarried">
+            Unmarried
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <h3 style="text-align: center;"> <br>Emergency Persons Details </h3>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="emergencyPersonName" [(ngModel)]="page2.emergencyPerson.name">
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Address</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="emergencyPersonAddress" [(ngModel)]="page2.emergencyPerson.address">
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Mobile No.</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="emergencyPersonMobileNo" [(ngModel)]="page2.emergencyPerson.mobileNo">
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Relationship</mat-label>
-        <input matInput name="postalCode">
+        <input matInput name="emergencyPersonRelation" [(ngModel)]="page2.emergencyPerson.relationship">
       </mat-form-field>
       <div style="display: flex; align-items: center; justify-content: center;">
-        <button mat-raised-button color="accent" matStepperPrevious>Previous</button>
-        <button mat-raised-button color="primary" type="submit" style="margin-left: 6%" matStepperNext>Submit</button>
+<!--        <button mat-raised-button color="accent" matStepperPrevious>Previous</button>-->
+<!--        <button mat-raised-button color="primary" type="submit" style="margin-left: 6%" matStepperNext>Submit</button>-->
       </div>
     </div>
+  <div style="width: 30%; margin-top: 8%; margin-bottom: 20%; padding-left: 2%; background: #e8e6fd4d;">
+  <pre><p>{{page2 | json}}</p></pre>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormdataserviceService} from "../service/formdataservice.service";
 
 @Component({
   selector: 'app-form2',
@@ -7,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Form2Component implements OnInit {
 
-  constructor() { }
+  page2: any;
+  // picker: any;
+  constructor(private formDataService: FormdataserviceService) {
+    this.page2 = formDataService.allPageData.page2;
+    // this.picker = formDataService.allPageData.page2.dateOfBirth;
+  }
 
   ngOnInit(): void {
   }
 
-  bloodGroups: any = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]
-  picker: any;
+
+  bloodGroups: any = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
 
   bdDistrict={
     "Gazipur":
@@ -61,5 +67,5 @@ export class Form2Component implements OnInit {
         }
       },
   }
-  
+
 }

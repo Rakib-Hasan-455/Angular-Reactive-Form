@@ -11,7 +11,7 @@ import {FormdataserviceService} from "../service/formdataservice.service";
 export class Form1Component {
   phoneNumbers: any = [];
   emailAddresses: any = [];
-  selectedPhoneCode: any = [];
+  selectedPhoneCode: any = "+880";
   // Multiple Phone Number
   addOnBlur = true;
 
@@ -21,7 +21,7 @@ export class Form1Component {
     var value = (event.value || '').trim();
     // Add our phone
     if (value) {
-      this.phoneNumbers.push({number: this.selectedPhoneCode.code+value, countryPhoneCode: this.selectedPhoneCode});
+      this.phoneNumbers.push({number: this.selectedPhoneCode+value, countryPhoneCode: this.selectedPhoneCode});
     }
 
     // Clear the input value
@@ -58,7 +58,9 @@ export class Form1Component {
   page1:any;
 // give phoneNo: any = arrayList of code, countryName
   constructor(formDataService: FormdataserviceService) {
-    this.page1 = formDataService.allPageData;
+    this.page1 = formDataService.allPageData.page1;
+    this.page1.phoneNo = this.phoneNumbers;
+    this.page1.emailAddr = this.emailAddresses;
   }
 
   personOccupation = [

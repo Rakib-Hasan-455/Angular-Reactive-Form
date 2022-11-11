@@ -1,69 +1,103 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormdataserviceService {
 
-  constructor() { }
+  constructor() {
+  }
 
   allPageData: any = {
-  id: "",
-  personName: {
-    prefix: "",
-    firstName: "",
-    lastName: "",
-    suffix: ""
-  },
-  fatherInfo: {
-    fullName: "",
-    occupation: ""
-  },
-  motherInfo: {
-    fullName: "",
-    occupation: ""
-  },
-  presentAddress: {
-    selectedOption: "bangladesh",
-    bangladesh: {
-      division: "",
-      district: "",
-      upazilla: "",
-      policeStation: "",
-      postOffice: "",
-      postCode: "",
-      village: ""
+    page1: {
+      id: "",
+      personName: {
+        prefix: "",
+        firstName: "",
+        lastName: "",
+        suffix: ""
+      },
+      fatherInfo: {
+        fullName: "",
+        occupation: ""
+      },
+      motherInfo: {
+        fullName: "",
+        occupation: ""
+      },
+      presentAddress: {
+        selectedOption: "bangladesh",
+        bangladesh: {
+          division: "",
+          district: "",
+          upazilla: "",
+          policeStation: "",
+          postOffice: "",
+          postCode: "",
+          village: ""
+        },
+        other: {
+          country: "",
+          city: "",
+          state: "",
+          postalCode: ""
+        }
+      },
+      parmanentAddress: {
+        selectedOption: "bangladesh",
+        bangladesh: {
+          division: "",
+          district: "",
+          upazilla: "",
+          policeStation: "",
+          postOffice: "",
+          postCode: "",
+          village: ""
+        },
+        other: {
+          country: "",
+          city: "",
+          state: "",
+          postalCode: ""
+        }
+      },
+      mobileNo: "",
+      phoneNo: [],
+      emailAddr: [],
+      gender: "",
+      religion: "",
+      nationality: ""
     },
-    other: {
-      country: "",
-      city: "",
-      state: "",
-      postalCode: ""
+    page2: {
+      bloodGroup: "",
+      medicalDisability: "",
+      dateOfBirth: "",
+      placeOfBirth: {
+        selectedOption: "bangladesh",
+        bangladesh: {
+          division: "",
+          district: "",
+          policeStation: "",
+          postOffice: "",
+          village: ""
+        },
+        other: {
+          country: "",
+          city: "",
+          state: "",
+          postalCode: ""
+        }
+      },
+      nidNo: "",
+      passportNo: "",
+      maritalStatus: "",
+      emergencyPerson: {
+        name: "",
+        address: "",
+        mobileNo: "",
+        relationship: ""
+      }
     }
-  },
-  parmanentAddress: {
-    bangladesh: {
-      division: "",
-      district: "",
-      upazilla: "",
-      policeStation: "",
-      postOffice: "",
-      postCode: "",
-      village: ""
-    },
-    other: {
-      country: "",
-      city: "",
-      state: "",
-      postalCode: ""
-    }
-  },
-  mobileNo: "",
-  phoneNo: [],
-  emailAddr: [],
-  gender: "",
-  religion: "",
-  nationality: ""
-}
+  }
 
 }
