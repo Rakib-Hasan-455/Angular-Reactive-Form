@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormdataserviceService} from "../service/formdataservice.service";
 
 @Component({
   selector: 'app-form-submit-msg',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-submit-msg.component.css']
 })
 export class FormSubmitMsgComponent implements OnInit {
-
-  constructor() { }
+  allPageData: any;
+  constructor(private formDataService: FormdataserviceService) {
+    this.allPageData = formDataService.allPageData;
+  }
 
   ngOnInit(): void {
   }

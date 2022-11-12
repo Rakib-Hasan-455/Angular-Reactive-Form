@@ -1,1 +1,11 @@
-<h3>Success!</h3>
+<div style="display: flex;">
+  <div style=" width: 60%; margin: 1% 40%">
+    <h1> Your Filled Data are:</h1>
+    <pre>
+        {{allPageData | json}}
+    </pre>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <button mat-raised-button color="primary">Submit</button>
+    </div>
+  </div>
+</div>

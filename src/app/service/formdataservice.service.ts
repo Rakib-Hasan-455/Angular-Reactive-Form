@@ -75,8 +75,9 @@ export class FormdataserviceService {
       placeOfBirth: {
         selectedOption: "bangladesh",
         bangladesh: {
-          division: "",
+          division: "dhaka",
           district: "",
+          upazilla: "",
           policeStation: "",
           postOffice: "",
           village: ""

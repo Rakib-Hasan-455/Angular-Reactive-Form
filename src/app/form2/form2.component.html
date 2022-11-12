@@ -1,167 +1,177 @@
 <div class="head-container">
   <h1> Southeast University </h1>
-  <p>  Permanent Campus 251/A and 252. Tejgaon Industrial Area Dhaka-1208   </p>
+  <p> Permanent Campus 251/A and 252. Tejgaon Industrial Area Dhaka-1208 </p>
   <hr width="90%">
 </div>
 <div style="display: flex;">
-    <div style=" width: 60%; padding-top: 4%; padding-left: 2%;">
-        <mat-form-field appearance="fill">
-            <mat-label>Blood Group</mat-label>
-            <mat-select [(ngModel)]="page2.bloodGroup">
-                    <mat-option [value]="item"  *ngFor="let item of bloodGroups">
-                        {{item}}
-                    </mat-option>
-              </mat-select>
-        </mat-form-field>
-      &nbsp;
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Medical Disability(If Any)</mat-label>
-            <input  [(ngModel)]="page2.medicalDisability" matInput name="suffix" required>
-        </mat-form-field>
-      &nbsp;
-        <mat-form-field appearance="fill">
-            <mat-label>Date Of Birth</mat-label>
-            <input [(ngModel)]="page2.dateOfBirth" matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      &nbsp;
-            <h3 style="text-align: center;"> <br>Place Of Birth </h3>
-                    <!-- Select Country -->
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-select name="presentCountry" [(ngModel)]="page2.placeOfBirth.selectedOption">
-                                <mat-option value="bangladesh" selected>
-                                    Bangladesh
-                                </mat-option>
-                                <mat-option value="other">
-                                    Other
-                                </mat-option>
-                          </mat-select>
-                    </mat-form-field>
-                    <!-- Show BD Country if Selected == BD -->
-                    <div  >
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Select Division</mat-label>
-                            <mat-select name="division">
-                                    <mat-option [value]=" " >
-
-                                    </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        &nbsp;
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Select District</mat-label>
-                            <mat-select name="district">
-                                    <mat-option [value]=" ">
-
-                                    </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        &nbsp;
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Select Police Station</mat-label>
-                            <mat-select name="policeStation" >
-                                    <mat-option>
-
-                                    </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        &nbsp;
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Select Post Office</mat-label>
-                            <mat-select name="postOffice">
-                                    <mat-option>
-
-                                    </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        &nbsp;
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Select Village</mat-label>
-                            <mat-select name="village">
-                                <mat-option>
-
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-            <!-- Show BD Country if Selected == Other -->
-            <div  >
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Select Country</mat-label>
-                    <mat-select name="country" [(ngModel)]="page2.placeOfBirth.other.country">
-                      <mat-option value="Canada" selected>
-                        Canada
-                      </mat-option>
-                      <mat-option value="Australia">
-                        Australia
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                &nbsp;
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>City</mat-label>
-                    <input matInput name="city" [(ngModel)]="page2.placeOfBirth.other.city">
-                </mat-form-field>
-                &nbsp;
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>State</mat-label>
-                    <input matInput name="state" [(ngModel)]="page2.placeOfBirth.other.state">
-                </mat-form-field>
-                &nbsp;
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Postal Code</mat-label>
-                    <input matInput name="postalCode" [(ngModel)]="page2.placeOfBirth.other.postalCode">
-                </mat-form-field>
-            </div>
+  <div style=" width: 60%; padding-top: 4%; padding-left: 2%;">
+    <mat-form-field appearance="fill">
+      <mat-label>Blood Group</mat-label>
+      <mat-select [(ngModel)]="page2.bloodGroup">
+        <mat-option [value]="item" *ngFor="let item of bloodGroups">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Medical Disability(If Any)</mat-label>
+      <input [(ngModel)]="page2.medicalDisability" matInput name="suffix" required>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field appearance="fill">
+      <mat-label>Date Of Birth</mat-label>
+      <input [(ngModel)]="page2.dateOfBirth" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    &nbsp;
+    <h3 style="text-align: center;"><br>Place Of Birth </h3>
+    <!-- Select Country -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Select Country</mat-label>
+      <mat-select name="presentCountry" [(ngModel)]="page2.placeOfBirth.selectedOption">
+        <mat-option value="bangladesh" selected>
+          Bangladesh
+        </mat-option>
+        <mat-option value="other">
+          Other
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- Show BD Country if Selected == BD -->
+    <div *ngIf="page2.placeOfBirth.selectedOption === 'bangladesh'">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>NID No.</mat-label>
-        <input matInput name="nidNo" [(ngModel)]="page2.nidNo">
-      </mat-form-field>
-      &nbsp;
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Passport No.</mat-label>
-        <input matInput name="passportNo" [(ngModel)]="page2.passportNo">
-      </mat-form-field>
-      &nbsp;
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Marital Status</mat-label>
-        <mat-select name="maritalStatus" [(ngModel)]="page2.maritalStatus">
-          <mat-option value="Married" selected>
-            Married
-          </mat-option>
-          <mat-option value="Unmarried">
-            Unmarried
+        <mat-label>Select Division</mat-label>
+        <mat-select name="division"  [(ngModel)]="page2.placeOfBirth.bangladesh.division">
+          <mat-option value="dhaka">
+            Dhaka
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <h3 style="text-align: center;"> <br>Emergency Persons Details </h3>
+      &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput name="emergencyPersonName" [(ngModel)]="page2.emergencyPerson.name">
+        <mat-label>Select District</mat-label>
+        <mat-select name="district" [(ngModel)]="page2.placeOfBirth.bangladesh.district" (selectionChange)="setUpazillas($event.value)">
+          <mat-option [value]="district.key" *ngFor="let district of bdDistrict | keyvalue">
+            {{district.key}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput name="emergencyPersonAddress" [(ngModel)]="page2.emergencyPerson.address">
+        <mat-label>Select Upazilla</mat-label>
+        <mat-select name="upazilla" [(ngModel)]="page2.placeOfBirth.bangladesh.upazilla" (selectionChange)="setThanas($event.value)">
+          <mat-option [value]="upazilla.key" *ngFor="let upazilla of upazillas | keyvalue">
+            {{upazilla.key}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Mobile No.</mat-label>
-        <input matInput name="emergencyPersonMobileNo" [(ngModel)]="page2.emergencyPerson.mobileNo">
+        <mat-label>Select Police Station</mat-label>
+        <mat-select name="policeStation" [(ngModel)]="page2.placeOfBirth.bangladesh.policeStation" (selectionChange)="setPostOffice($event.value)">
+          <mat-option [value]="thana.key" *ngFor="let thana of thanas | keyvalue">
+            {{thana.key}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       &nbsp;
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Relationship</mat-label>
-        <input matInput name="emergencyPersonRelation" [(ngModel)]="page2.emergencyPerson.relationship">
+        <mat-label>Select Post Office</mat-label>
+        <mat-select name="postOffice" [(ngModel)]="page2.placeOfBirth.bangladesh.postOffice" (selectionChange)="setVillages($event.value)">
+          <mat-option [value]="postOffice.key" *ngFor="let postOffice of postOffices | keyvalue">
+            {{postOffice.key}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-      <div style="display: flex; align-items: center; justify-content: center;">
-<!--        <button mat-raised-button color="accent" matStepperPrevious>Previous</button>-->
-<!--        <button mat-raised-button color="primary" type="submit" style="margin-left: 6%" matStepperNext>Submit</button>-->
-      </div>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Select Village</mat-label>
+        <mat-select name="village" [(ngModel)]="page2.placeOfBirth.bangladesh.village">
+          <mat-option [value]="village" *ngFor="let village of villages">
+            {{village}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
+    <!-- Show BD Country if Selected == Other -->
+    <div *ngIf="page2.placeOfBirth.selectedOption === 'other'">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Select Country</mat-label>
+        <mat-select name="country" [(ngModel)]="page2.placeOfBirth.other.country">
+          <mat-option value="Canada" selected>
+            Canada
+          </mat-option>
+          <mat-option value="Australia">
+            Australia
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput name="city" [(ngModel)]="page2.placeOfBirth.other.city">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>State</mat-label>
+        <input matInput name="state" [(ngModel)]="page2.placeOfBirth.other.state">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Postal Code</mat-label>
+        <input matInput name="postalCode" [(ngModel)]="page2.placeOfBirth.other.postalCode">
+      </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>NID No.</mat-label>
+      <input matInput name="nidNo" [(ngModel)]="page2.nidNo">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Passport No.</mat-label>
+      <input matInput name="passportNo" [(ngModel)]="page2.passportNo">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Marital Status</mat-label>
+      <mat-select name="maritalStatus" [(ngModel)]="page2.maritalStatus">
+        <mat-option value="Married" selected>
+          Married
+        </mat-option>
+        <mat-option value="Unmarried">
+          Unmarried
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h3 style="text-align: center;"><br>Emergency Persons Details </h3>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput name="emergencyPersonName" [(ngModel)]="page2.emergencyPerson.name">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput name="emergencyPersonAddress" [(ngModel)]="page2.emergencyPerson.address">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mobile No.</mat-label>
+      <input matInput name="emergencyPersonMobileNo" [(ngModel)]="page2.emergencyPerson.mobileNo">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Relationship</mat-label>
+      <input matInput name="emergencyPersonRelation" [(ngModel)]="page2.emergencyPerson.relationship">
+    </mat-form-field>
+    <div style="display: flex; align-items: center; justify-content: center;">
+              <button mat-raised-button color="accent" matStepperPrevious>Previous</button>
+              <button mat-raised-button color="primary" type="submit" style="margin-left: 6%" matStepperNext>Submit</button>
+    </div>
+  </div>
   <div style="width: 30%; margin-top: 8%; margin-bottom: 20%; padding-left: 2%; background: #e8e6fd4d;">
-  <pre><p>{{page2 | json}}</p></pre>
+    <pre><p>{{page2 | json}}</p></pre>
   </div>
 </div>

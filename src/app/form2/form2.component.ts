@@ -68,4 +68,24 @@ export class Form2Component implements OnInit {
       },
   }
 
+  upazillas: any;
+  setUpazillas(data: any) {
+    // @ts-ignore
+    this.upazillas = this.bdDistrict[data];
+  }
+  thanas: any;
+  setThanas(value: any) {
+    // @ts-ignore
+    this.thanas = this.upazillas[value];
+  }
+
+  postOffices: any;
+  setPostOffice(value: any) {
+    this.postOffices = this.thanas[value];
+  }
+
+  villages: any;
+  setVillages(value: any) {
+    this.villages = this.postOffices[value];
+  }
 }
