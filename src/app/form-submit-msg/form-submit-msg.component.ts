@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormdataserviceService} from "../service/formdataservice.service";
-import {FormControl, FormGroupDirective, NgForm, NgModel, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, NgModel, Validators} from "@angular/forms";
 import {ErrorStateMatcher} from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -19,14 +19,19 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class FormSubmitMsgComponent implements OnInit {
   allPageData: any;
 
-  constructor(private formDataService: FormdataserviceService) {
+  constructor(private formDataService: FormdataserviceService, private formBuilder: FormBuilder) {
     this.allPageData = formDataService.allPageData;
   }
 
   ngOnInit(): void {
   }
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
   matcher = new MyErrorStateMatcher();
 
   password: any;
+  userFormGroup: FormGroup = this.formBuilder.group({
+      emailFormControl: new FormControl('', [Validators.required, Validators.email])
+  }
+
+  );
 }
