@@ -30,8 +30,13 @@ export class FormSubmitMsgComponent implements OnInit {
 
   password: any;
   userFormGroup: FormGroup = this.formBuilder.group({
-      emailFormControl: new FormControl('', [Validators.required, Validators.email])
+      email1FormControl: new FormControl('', [Validators.required, Validators.email]),
+      email2FormControl: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9+_.-]+@(.+)$")])
   }
 
   );
+
+  log() {
+    console.log("Submitted");
+  }
 }

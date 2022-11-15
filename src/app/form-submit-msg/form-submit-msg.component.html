@@ -12,24 +12,47 @@
 <div style=" width: 60%; margin: 1% 40%">
   <form [formGroup]="userFormGroup">
 <mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Email</mat-label>
-  <input type="email" matInput formControlName="emailFormControl" [errorStateMatcher]="matcher" required>
+  <mat-label>Email 1</mat-label>
+  <input type="email" matInput [formControlName]="'email1FormControl'" [errorStateMatcher]="matcher" required>
   <mat-hint>Email Should Be like 'abc@gmail.com'!</mat-hint>
-  <mat-error *ngIf="userFormGroup.get('emailFormControl')?.invalid"></mat-error>
-<!--  <mat-error *ngIf="emailFormControl.invalid && !emailFormControl.hasError('required')">-->
-<!--    Please enter a valid email address-->
-<!--  </mat-error>-->
-<!--  <mat-error *ngIf="emailFormControl.hasError('required')">-->
-<!--    Email is <strong>required</strong>-->
-<!--  </mat-error>-->
+  <mat-error *ngIf="userFormGroup.get('email1FormControl')?.invalid"></mat-error>
+  <mat-error *ngIf="userFormGroup.get('email1FormControl')?.invalid && !userFormGroup.get('email1FormControl')?.hasError('required')">
+    Please enter a valid email address
+  </mat-error>
+  <mat-error *ngIf="userFormGroup.get('email1FormControl')?.hasError('required')">
+    Email is <strong>required</strong>
+  </mat-error>
 </mat-form-field>
-<br>
-<mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Password</mat-label>
-  <input matInput name="password" [(ngModel)] = "password" required>
-</mat-form-field><br>
+<br><br><br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email 2</mat-label>
+      <input type="email" matInput formControlName="email2FormControl" [errorStateMatcher]="matcher" required>
+      <mat-hint>Email Should Be like 'abc@gmail.com'!</mat-hint>
+      <mat-error *ngIf="userFormGroup.get('email2FormControl')?.invalid"></mat-error>
+      <mat-error *ngIf="userFormGroup.get('email2FormControl')?.invalid && !userFormGroup.get('email2FormControl')?.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="userFormGroup.get('email2FormControl')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <br>
   <div style="margin-left: 5%;">
-  <button mat-raised-button color="warn">Submit</button>
-  </div>
+    <button
+      class="fuse-mat-button-large w-full mt-6"
+      mat-flat-button
+      [color]="'primary'"
+      [disabled]="userFormGroup.invalid"
+      (click)="log()">
+                    <span *ngIf="!userFormGroup.disabled">
+                        Sign in
+                    </span>
+      <mat-progress-spinner
+        *ngIf="userFormGroup.disabled"
+        [diameter]="24"
+        [mode]="'indeterminate'"></mat-progress-spinner>
+    </button>  </div>
   </form>
 </div>

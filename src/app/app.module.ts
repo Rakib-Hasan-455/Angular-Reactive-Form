@@ -18,6 +18,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { FormSubmitMsgComponent } from './form-submit-msg/form-submit-msg.component'
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,23 +26,24 @@ import { FormSubmitMsgComponent } from './form-submit-msg/form-submit-msg.compon
     Form2Component,
     FormSubmitMsgComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-        FlexLayoutModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatChipsModule,
-        MatIconModule,
-        MatStepperModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatIconModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
